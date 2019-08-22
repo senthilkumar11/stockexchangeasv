@@ -28,9 +28,6 @@ public class Company {
 	private int sectorId;
 	private String briefWriteUp;
 	private int stockPriceId;
-	@OneToMany
-	@JoinColumn(name="stockPrice_Id")
-	private List<StockPrice> stockPrice;
 	
 	
 	public Company(int id, String companyName, BigDecimal turnOver, String ceo, String boardOfDirectors,

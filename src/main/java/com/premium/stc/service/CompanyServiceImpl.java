@@ -9,11 +9,13 @@ import org.springframework.stereotype.Service;
 
 import com.premium.stc.dao.*;
 import com.premium.stc.model.Company;
+import com.premium.stc.model.Sector;
 @Service
 public class CompanyServiceImpl implements CompanyService {
 	@Autowired
 	private CompanyDao companyDao;
-	
+	@Autowired
+	private SectorDao sectorDao;
 	public Company insertCompany(Company company) throws Exception {
 		return companyDao.save(company);
 		
@@ -21,7 +23,7 @@ public class CompanyServiceImpl implements CompanyService {
 
 
 	public Company updateCompany(Company company) throws Exception {
-		return companyDao.saveAndFlush(company);
+		return companyDao.save(company);
 	
 	}
 
@@ -32,9 +34,17 @@ public class CompanyServiceImpl implements CompanyService {
 
 
 	@Override
-	public List<Company> getCompanyListSector(int sectorId) throws Exception {
+	public List<Company> getCompanyListSector(String sectorName) throws Exception {
 		
-		return companyDao.findBySectorId(sectorId);
+		Sector sector=sectorDao.findByName(sectorName);
+		return companyDao.findBySectorId(sector.getId());
+	}
+
+
+	@Override
+	public List<String> getPattern(String pattern) throws Exception {
+	
+		return companyDao.getPattern(pattern);
 	}
 
 }

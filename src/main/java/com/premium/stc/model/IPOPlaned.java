@@ -2,10 +2,19 @@ package com.premium.stc.model;
 
 import java.util.*;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+@Entity
 public class IPOPlaned {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	private int companyCode;
 	private String companyName;
-	private String stockExchange;
+	
+	private int stockExchangeId;
 	private double pricePerShare;
 	private int totalNumberOfShares;
 	private Date openDateTime;
@@ -19,20 +28,29 @@ public class IPOPlaned {
 		this.id = id;
 	}
 
+	
+	public int getCompanyCode() {
+		return companyCode;
+	}
+
+	public void setCompanyCode(int companyCode) {
+		this.companyCode = companyCode;
+	}
+
+	public int getStockExchangeId() {
+		return stockExchangeId;
+	}
+
+	public void setStockExchangeId(int stockExchangeId) {
+		this.stockExchangeId = stockExchangeId;
+	}
+	
 	public String getCompanyName() {
 		return companyName;
 	}
 
 	public void setCompanyName(String companyName) {
 		this.companyName = companyName;
-	}
-
-	public String getStockExchange() {
-		return stockExchange;
-	}
-
-	public void setStockExchange(String stockExchange) {
-		this.stockExchange = stockExchange;
 	}
 
 	public double getPricePerShare() {

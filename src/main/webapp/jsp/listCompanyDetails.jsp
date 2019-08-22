@@ -46,7 +46,7 @@
 	Company com=(Company)companyList.get(i);
 	%>
       <tr>
-        <th><%=com.getCompanyCode() %></th>
+        <th><%=com.getId() %></th>
         <td><%=com.getCompanyName() %></td>
         <td><%=com.getCeo() %></td>
         <td><%=com.getBriefWriteUp() %></td>

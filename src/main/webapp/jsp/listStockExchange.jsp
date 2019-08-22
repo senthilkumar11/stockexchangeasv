@@ -46,7 +46,7 @@
             	StockExchange stock=(StockExchange)stockList.get(i);
             	%>
             <tr>
-              <th ><%=stock.getStockExchange() %></th>
+              <th ><%=stock.getName() %></th>
               <td><%=stock.getBrief() %> </td>
               <td><%=stock.getContactAddress() %></td>
               <td><%=stock.getRemarks() %></td>

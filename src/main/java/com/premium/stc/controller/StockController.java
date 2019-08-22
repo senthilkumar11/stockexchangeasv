@@ -17,7 +17,7 @@ import com.premium.stc.model.Company;
 import com.premium.stc.model.StockExchange;
 import com.premium.stc.service.StockExchangeService;
 @Controller
-public class StockControllerImpl {
+public class StockController {
 	@Autowired
 	StockExchangeService stockExchangeService;
 	@RequestMapping(path="/stocklist")

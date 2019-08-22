@@ -12,6 +12,8 @@ public interface CompanyService {
 
 	public List<Company> getCompanyList() throws Exception;
 
-	public List<Company> getCompanyListSector(int sectorId)throws Exception;
+	public List<Company> getCompanyListSector(String sectorName)throws Exception;
+	
+	public List<String> getPattern(String pattern)throws Exception;
 	
 }
